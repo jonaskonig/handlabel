@@ -7,8 +7,8 @@ import numpy as np
 import time
 
 FILENAME = "/mnt/ceph/storage/data-tmp/teaching-current/jk76qufi/classified/statements_sh_bal_cleaned.csv"
-START = # TODO Set as you wish
-END = # TODO Set as you wish
+START = # TODO
+END = # TODO
 
 
 def readlist(rangb: int, rangend: int, filename: str):
@@ -35,11 +35,11 @@ def label(df):
         counter +=1
 
     df["handlable"] = answer
-    df['diff'] = np.where(df['label'] == df['handlable'], 1, 0)
+    # df['diff'] = np.where(df['label'] == df['handlable'], 1, 0)
     df.to_csv("handlables.csv")
-    same =  df['diff'].sum()
-    accuracy = same/len(df)*100
-    print(f"The lable is {accuracy}%")
+    # same =  df['diff'].sum()
+    # accuracy = same/len(df)*100
+    # print(f"The lable is {accuracy}%")
 
 def getstats():
     df = pd.read_csv('handlables.csv')
