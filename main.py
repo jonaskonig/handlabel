@@ -6,9 +6,9 @@ import pandas as pd
 import numpy as np
 import time
 
-FILENAME = "/Users/jona/Documents/studium/bigdata/twitter_statements_tenses/traineq.csv"
-START = 20
-END = 40
+FILENAME = "/mnt/ceph/storage/data-tmp/teaching-current/jk76qufi/classified/statements_sh_bal_cleaned.csv"
+START = # TODO Set as you wish
+END = # TODO Set as you wish
 
 
 def readlist(rangb: int, rangend: int, filename: str):
