@@ -18,17 +18,18 @@ def readfiletolist(filename, start, end):
     thislist = []
     f = open(filename)
     lines = f.readlines()
-    for i in range(start,end):
+    for i in range(start,end+1):
         thislist.append(re.sub(r"\n", "", lines[i]))
     return thislist
 def readlist(rangb: int, rangend: int, filename1: str):
-    list = pd.read_csv(filename1, nrows=END)
-    sublist = list.loc[rangb:rangend+1]
+    list = pd.read_csv(filename1, nrows=END+1)
+    sublist = list.loc[rangb:rangend]
     return sublist.to_dict('records')
 
 
 def label(datbase, negative ):
     output = []
+    print(len(datbase))
     newlist = datbase+negative
     random.shuffle(newlist)
     counter = 0
