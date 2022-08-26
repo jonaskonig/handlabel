@@ -29,7 +29,6 @@ def readlist(rangb: int, rangend: int, filename1: str):
 
 def label(datbase, negative ):
     output = []
-    print(len(datbase))
     newlist = datbase+negative
     random.shuffle(newlist)
     counter = 0
