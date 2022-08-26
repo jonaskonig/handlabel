@@ -26,6 +26,16 @@ def readlist(rangb: int, rangend: int, filename1: str):
     sublist = list.loc[rangb:rangend]
     return sublist.to_dict('records')
 
+def checkinput(input) -> bool:
+    try:
+        int(input)
+    except:
+        return True
+    if int(input) != 1 and int(input) != 2 and int(input) != 0:
+        return True
+    return False
+
+
 
 def label(datbase, negative ):
     output = []
@@ -53,13 +63,13 @@ def label(datbase, negative ):
         if type(item) == dict:
             print(item["emotion"])
             x = input("Does emotion fit 0:not at all, 1: mostly , 2: totally: ")
-            while int(x) != 1 and int(x) != 2 and int(x) != 0:
+            while checkinput(x):
                 print("Valid answer are 0,1,2")
                 x = input("Does emotion fit 0:not at all, 1: mostly , 2: totally: ")
             emotion = x
             print(item["topic"])
             x = input("Does topic fit 0:not at all, 1: mostly , 2: totally: ")
-            while int(x) != 1 and int(x) != 2 and int(x) != 0:
+            while checkinput(x):
                 print("Valid answer are 0,1,2")
                 x = input("Does topic fit 0:not at all, 1: mostly , 2: totally: ")
             topic = x
