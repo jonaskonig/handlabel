@@ -10,8 +10,8 @@ import time
 
 FILENAME_Database = "databasedata.csv"
 FILENAME_NEGATIVE = "alllist_shuffle.txt"
-START = 0
-END = 2
+START = 200
+END = 299
 
 
 def readfiletolist(filename, start, end):
@@ -55,7 +55,7 @@ def label(datbase, negative ):
         while x != "Y" and x != "N" and x != "y" and x != "n":
             print("Valid answer is Y or N")
             x = input("Future referencing statement Y/N: ")
-        if x == "Y":
+        if x == "Y" or x == "y":
             answer = 1
         else:
             answer = 0
